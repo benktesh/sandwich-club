@@ -1,9 +1,12 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -14,6 +17,12 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+
+    TextView mMainName;
+    TextView mDescription;
+    TextView mAlsoKnownAs;
+    TextView mIngredients;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI();
+        populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -56,7 +65,18 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void populateUI(Sandwich sandwich) {
+        mAlsoKnownAs = (TextView) findViewById(R.id.also_known_tv);
+        mDescription = (TextView) findViewById(R.id.description_tv);
+        mIngredients = (TextView) findViewById(R.id.ingredients_tv);
+
+        String aka = String.join(", ", sandwich.getAlsoKnownAs());
+        mDescription.setText(sandwich.getDescription());
+        mIngredients.setText(String.join(", ", sandwich.getIngredients()));
+
+        mAlsoKnownAs.setText(aka);
+
 
     }
 }
