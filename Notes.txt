@@ -1,3 +1,4 @@
 This is my note about acitivy on ND program. The purpose is to document the actions, issues and thoughts so that I can revisit if I need help wiht or can help someone.
 
-Day 1. 04/24/2018: Reviewed Lesson 1. Cloned the starter code for Sandwich club. Created a repo with the same name in GIT hub and pushed the code to my own repo. Renamed the folder to remove the 'starter code' to get a clean slate. 
+Day 1. 04/24/2018: Reviewed Lesson 1. Cloned the starter code for Sandwich club. Created a repo with the same name in GIT hub and pushed the code to my own repo. Renamed the folder to remove the 'starter code' to get a clean slate. Updated code for json object parsing
+Day 2. 04/25/2018: Created UI for detailed activity, polished UI and then finally handled rotation.
