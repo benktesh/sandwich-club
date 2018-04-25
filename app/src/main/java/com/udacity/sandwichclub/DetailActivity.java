@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+    private static final String TAG = DetailActivity.class.getSimpleName();
 
     TextView mDescription;
     TextView mAlsoKnownAs;
@@ -70,12 +72,10 @@ public class DetailActivity extends AppCompatActivity {
         mDescription = (TextView) findViewById(R.id.description_tv);
         mIngredients = (TextView) findViewById(R.id.ingredients_tv);
         mPlaceOfOrigin = (TextView) findViewById(R.id.origin_tv);
-
         mDescription.setText(sandwich.getDescription());
         mIngredients.setText(TextUtils.join(", ", sandwich.getIngredients()));
         mPlaceOfOrigin.setText(sandwich.getPlaceOfOrigin());
         mAlsoKnownAs.setText(TextUtils.join(", ", sandwich.getAlsoKnownAs()));
-
 
     }
 }
