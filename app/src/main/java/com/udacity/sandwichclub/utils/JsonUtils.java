@@ -14,12 +14,6 @@ import java.util.List;
 
 public class JsonUtils {
 
-    //private String mainName; done
-    //private List<String> alsoKnownAs = null; done
-    //private String placeOfOrigin;
-    //private String description; done
-    //private String image; done
-    //private List<String> ingredients = null;
     private static final String TAG = JsonUtils.class.getSimpleName();
     public static Sandwich parseSandwichJson(String json) {
         try {
